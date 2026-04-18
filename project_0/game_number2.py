@@ -10,13 +10,13 @@ def guess_the_number(number: int = 1) -> int:
         int: Число попыток
     """
     
-    max_border = 101
-    min_border = 1
-    count = 0
+    max_border = 101 #верхняя граница
+    min_border = 1 # нижняя
+    count = 0 # подсчет попыток
     
     while True:
         count += 1
-        random_number = (max_border + min_border) // 2
+        random_number = (max_border + min_border) // 2 #
         
         if random_number == number:
             break 
@@ -40,12 +40,12 @@ def average_value (guess_the_number) -> int:
     Returns:
         int: Среднее количество попыток
     """
-    list_numbers = []
-    np.random.seed(20)
+    list_numbers = [] #список для чисел
+    np.random.seed(20) #установил, чтобы рандомное число у всех было 20
     random_array = np.random.randint(1, 101, size=1000)
     
     for num in random_array:
-        list_numbers.append(guess_the_number (num))
+        list_numbers.append(guess_the_number (num)) 
         
     average = int(np.mean(list_numbers))
     print (f"Ваш алгоритм угадывает в среднем за: {average} попыток")
