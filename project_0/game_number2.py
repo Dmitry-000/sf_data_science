@@ -10,18 +10,18 @@ def guess_the_number(number: int = 1) -> int:
         int: Число попыток
     """
     
-    max_border = 101 #верхняя граница
-    min_border = 1 # нижняя
-    count = 0 # подсчет попыток
+    max_border = 101 # Верхняя граница
+    min_border = 1 # Нижняя
+    count = 0 # Подсчет попыток
     
     while True:
         count += 1
-        random_number = (max_border + min_border) // 2 #
+        random_number = (max_border + min_border) // 2 # Объединяю две границы и делю на 2, для точки отсчета поиска
         
         if random_number == number:
             break 
         
-        elif random_number > number:
+        elif random_number > number: # Если число больше тчки отсчета, то присваиваю новую верхнуюю границу и таким образом ниже делаю
             max_border = random_number
             
         else:
@@ -29,7 +29,7 @@ def guess_the_number(number: int = 1) -> int:
         
     return count
 
-#print(guess_the_number(number=97)) # проверял работоспособность
+#print(guess_the_number(number=97)) # Проверял работоспособность
 
 def average_value (guess_the_number) -> int:
     """За какое количство попыток в среднем за 1000 подходов угадывает наш алгоритм
@@ -40,8 +40,8 @@ def average_value (guess_the_number) -> int:
     Returns:
         int: Среднее количество попыток
     """
-    list_numbers = [] #список для чисел
-    np.random.seed(20) #установил, чтобы рандомное число у всех было 20
+    list_numbers = [] # Список для чисел
+    np.random.seed(20) # Установил, чтобы рандомное число у всех было 20
     random_array = np.random.randint(1, 101, size=1000)
     
     for num in random_array:
